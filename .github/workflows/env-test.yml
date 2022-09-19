@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: test
     steps:
-      -name: deploySomewhere
+      - name: deploySomewhere
         env:
           some_secret: ${{ secrets.A_SECRET }}
         run:
