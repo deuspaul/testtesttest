@@ -13,7 +13,7 @@ jobs:
         env:
           SOME_SECRET: ${{ secrets.A_SECRET }}
           STEP_VAR: "this is a step variable"
-        run:
+        run: |
           echo "the following are environment variables"
           echo $SOME_SECRET
           echo $STEP_VAR
