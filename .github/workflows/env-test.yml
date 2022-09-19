@@ -7,7 +7,6 @@ jobs:
   test_deployment_job:
     runs-on: ubuntu-latest
     environment: test
-    
     steps:
     - name: deploySomewhere
       env:
