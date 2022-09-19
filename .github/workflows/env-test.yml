@@ -7,8 +7,7 @@ jobs:
   job_with_GH_actions:
     runs-on: ubuntu-latest
     steps:
-      - name: hello world
-        run:
+      - run: 
           echo "Hello World"
 
       - uses: actions/checkout@v2
