@@ -38,7 +38,7 @@ jobs:
         run: |
           echo 
           echo "the following are environment variables"
-          echo "this is the secretVar: ${ secrets.A_SECRET }"
+          echo "this is the secretVar: ${{ secrets.A_SECRET }}"
           echo $STEP_VAR
           echo $GITHUB_REF
           echo "output of context:"
