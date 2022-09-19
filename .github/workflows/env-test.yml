@@ -15,7 +15,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version:16
+          node-version: 16
 
       - uses: wxdlong/hello-action@3dc69a523f937b57d06445e71f237b19565fb830
         with:
