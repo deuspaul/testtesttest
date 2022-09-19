@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 16
 
-      - uses: wxdlong/hello-action@3dc69a523f937b57d06445e71f237b19565fb830
+      - uses: wxdlong/hello-action@3dc69
         with:
           who-to-greet: 'live-lesson attendees'
 
