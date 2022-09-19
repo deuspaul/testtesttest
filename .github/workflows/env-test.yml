@@ -11,4 +11,6 @@ jobs:
       - name: deploySomewhere
       env:
         some_secret: ${{ secrets.A_SECRET }}
+      run:
+        echo "$some_secret"
   
