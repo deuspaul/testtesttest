@@ -9,8 +9,8 @@ jobs:
     environment: test
     steps:
       - name: deploySomewhere
-      env:
-        some_secret: ${{ secrets.A_SECRET }}
-      run:
-        echo "$some_secret"
+        env:
+          some_secret: ${{ secrets.A_SECRET }}
+        run:
+          echo "$some_secret"
   
