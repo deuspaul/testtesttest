@@ -5,12 +5,16 @@ on:
 
 jobs:
   test_deployment_job:
+    if: always()
     runs-on: ubuntu-latest
     environment: test
     steps:
       - name: deploySomewhere
         env:
-          some_secret: ${{ secrets.A_SECRET }}
+          SOME_SECRET: ${{ secrets.A_SECRET }}
+          STEP_VAR: "this is a step variable"
         run:
-          echo "$some_secret"
+          echo "the following are environment variables"
+          echo $SOME_SECRET
+          echo $STEP_VAR
   
