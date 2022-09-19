@@ -15,12 +15,14 @@ jobs:
         env:
           SOME_SECRET: ${{ secrets.A_SECRET }}
           STEP_VAR: "this is a step variable"
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: |
           echo 
           echo "the following are environment variables"
           echo "this is the secretVar: ${SOME_SECRET}"
           echo $STEP_VAR
-          echo $GITHUB.EVENT.HEAD_COMMIT.MESSAGE
+          echo $GITHUB.REPOSITORY
+          echo $GITHUB.REPOSITORY_OWNER
           echo "output of context:"
-          echo $GITHUB_CONTEXT
+          echo "$GITHUB_CONTEXT"
   
