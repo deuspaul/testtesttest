@@ -7,7 +7,7 @@ jobs:
   test_deployment_job:
     if: always()
     runs-on: ubuntu-latest
-    environment: testz
+    environment: test
     steps:
       - name: deploySomewhere
         env:
