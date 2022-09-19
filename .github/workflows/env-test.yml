@@ -4,6 +4,25 @@ on:
   workflow_dispatch:
 
 jobs:
+  job_with_GH_actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hello world
+        run:
+          echo "Hello World"
+
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version:16
+
+      - uses: wxdlong/hello-action@3dc69a523f937b57d06445e71f237b19565fb830
+        with:
+          who-to-greet: 'live-lesson attendees'
+
+
+
   test_deployment_job:
     if: always()
     runs-on: ubuntu-latest
