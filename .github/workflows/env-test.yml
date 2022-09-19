@@ -10,11 +10,11 @@ jobs:
     environment: test
     steps:
       - name: deploySomewhere
-          env:
-            SOME_SECRET: ${{ secrets.A_SECRET }}
-            STEP_VAR: "this is a step variable"
-          run: |
-            echo "the following are environment variables"
-            echo "this is the secretVar: ${SOME_SECRET}"
-            echo $STEP_VAR
+        env:
+          SOME_SECRET: ${{ secrets.A_SECRET }}
+          STEP_VAR: "this is a step variable"
+        run: |
+          echo "the following are environment variables"
+          echo "this is the secretVar: ${SOME_SECRET}"
+          echo $STEP_VAR
   
