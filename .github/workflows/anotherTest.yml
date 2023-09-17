@@ -19,4 +19,6 @@ jobs:
       - run: echo "ok not"
       - run: echo another step
       - shell: python
-        run: --version
+        run: |
+          x = 4
+          print (x)
