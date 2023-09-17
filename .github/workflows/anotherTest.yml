@@ -21,4 +21,4 @@ jobs:
       - shell: python
         run: |
           x = 4
-          print (x)
+          print (x/2)
