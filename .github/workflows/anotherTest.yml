@@ -6,7 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "build"
-      - id: somestepId
       - id: someStepId2
         run: echo this is a step with an id and run command
 
