@@ -8,6 +8,9 @@ jobs:
       - run: echo "build"
       - id: someStepId2
         run: echo this is a step with an id and run command
+      - run: |
+          pwd
+          ls
 
   job2:
     runs-on: ubuntu-latest
@@ -15,3 +18,5 @@ jobs:
       - run: echo deploy
       - run: echo "ok not"
       - run: echo another step
+      - shell: python
+        run: --version
