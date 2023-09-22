@@ -11,6 +11,11 @@ jobs:
       - run: |
           pwd
           ls
+      - run: |
+          echo ${{ github.actor }}
+          echo ${{ strategy.fail-fast }}
+      - run: echo ${{ github.actor }}
+      - run: echo ${{ strategy.fail-fast }}
 
   job2:
     runs-on: ubuntu-latest
