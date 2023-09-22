@@ -20,9 +20,9 @@ jobs:
         env:
           RUNNER_CONTEXT: ${{ toJson(runner) }}
         run: echo "$RUNNER_CONTEXT"
-      - id: DumpStep
-        name: LabelorName
-        run: echo "${{ toJson(runner) }}"
+      - run: echo "${{ toJson(runner) }}"
+      - run: echo "${{ toJson(needs) }}"
+      - run: echo "${{ toJson(vars) }}"
         
         
 
