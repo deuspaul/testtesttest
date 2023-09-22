@@ -18,7 +18,7 @@ jobs:
       - run: echo ${{ strategy.fail-fast }}
       - id: DumpStep
         name: LabelorName
-        run: echo ${{ runner }}
+        run: echo ${{ toJson(runner) }}
         
         
 
