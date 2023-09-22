@@ -22,7 +22,7 @@ jobs:
         run: echo "$RUNNER_CONTEXT"
       - run: echo "${{ toJson(runner) }}"
       - run: echo "${{ toJson(job) }}"
-      - run: echo "${{ toJson(jobs) }}"
+      - run: echo "${{ toJson(steps) }}"
         
         
 
