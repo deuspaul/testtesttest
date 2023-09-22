@@ -21,8 +21,8 @@ jobs:
           RUNNER_CONTEXT: ${{ toJson(runner) }}
         run: echo "$RUNNER_CONTEXT"
       - run: echo "${{ toJson(runner) }}"
-      - run: echo "${{ toJson(needs) }}"
-      - run: echo "${{ toJson(vars) }}"
+      - run: echo "${{ toJson(job) }}"
+      - run: echo "${{ toJson(jobs) }}"
         
         
 
