@@ -16,6 +16,11 @@ jobs:
           echo ${{ strategy.fail-fast }}
       - run: echo ${{ github.actor }}
       - run: echo ${{ strategy.fail-fast }}
+      - id: DumpStep
+        name: LabelorName
+        run: echo ${{ runner }}
+        
+        
 
   job2:
     runs-on: ubuntu-latest
