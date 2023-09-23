@@ -1,6 +1,7 @@
 on:
   workflow_dispatch
-
+env:
+  WF_VAR: "workflow variable"
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -31,6 +32,8 @@ jobs:
     steps:
       - run: echo deploy
       - run: echo "ok not"
+      - run: echo $WF_VAR
+      - run: echo ${{ env.WF_VAR }}
       - run: echo another step
       - shell: python
         run: |
