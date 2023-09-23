@@ -29,12 +29,18 @@ jobs:
 
   job2:
     runs-on: ubuntu-latest
+    env:
+      JOB_VAR: "Job Variable"
     steps:
-      - run: echo deploy
-      - run: echo "ok not"
-      - run: echo $WF_VAR
-      - run: echo ${{ env.WF_VAR }}
-      - run: echo another step
+      - name: test variables
+        env:
+          STEP_VAR: "Step Variables"
+        run: |
+          echo ${{ env.STEP_VAR }}
+          echo $JOB_VAR
+      - name: test powershell
+        shell: pwsh
+        run: echo $env:WF_VAR
       - shell: python
         run: |
           x = 4
