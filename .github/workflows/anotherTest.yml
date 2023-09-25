@@ -3,6 +3,7 @@ on:
 env:
   WF_VAR: "workflow variable"
 jobs:
+
   job1:
     runs-on: ubuntu-latest
     concurrency: group1
@@ -29,7 +30,6 @@ jobs:
         
 
   job2:
-    #needs: job1
     runs-on: ubuntu-latest
     concurrency: group1
     env:
@@ -50,7 +50,6 @@ jobs:
           print (x/2)
 
   job3:
-    #needs: job2
     runs-on: ubuntu-latest
     concurrency: group1
     steps:
