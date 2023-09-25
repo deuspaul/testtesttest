@@ -28,6 +28,7 @@ jobs:
         
 
   job2:
+    needs: job1
     runs-on: ubuntu-latest
     env:
       JOB_VAR: "Job Variable"
@@ -47,6 +48,7 @@ jobs:
           print (x/2)
 
   job3:
+    needs: job2
     runs-on: ubuntu-latest
     steps:
       - name: print default env vars
