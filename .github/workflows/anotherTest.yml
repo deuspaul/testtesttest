@@ -71,9 +71,7 @@ jobs:
 
   job4:
       runs-on: ubuntu-latest
-      concurrency:
-        group: group1
-        cancel-in-progress: false
+      concurrency: group1
       steps:
         - run: echo "this is job 4"
         
