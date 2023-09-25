@@ -5,6 +5,7 @@ env:
 jobs:
   job1:
     runs-on: ubuntu-latest
+    concurrency: group1
     steps:
       - run: echo "build"
       - id: someStepId2
@@ -28,8 +29,9 @@ jobs:
         
 
   job2:
-    needs: job1
+    #needs: job1
     runs-on: ubuntu-latest
+    concurrency: group1
     env:
       JOB_VAR: "Job Variable"
     steps:
@@ -48,8 +50,9 @@ jobs:
           print (x/2)
 
   job3:
-    needs: job2
+    #needs: job2
     runs-on: ubuntu-latest
+    concurrency: group1
     steps:
       - name: print default env vars
         run: |
