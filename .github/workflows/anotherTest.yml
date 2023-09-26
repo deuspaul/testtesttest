@@ -6,9 +6,10 @@ jobs:
 
   job1:
     runs-on: ubuntu-latest
-    concurrency:
-      group: group1
-      cancel-in-progress: false
+    if: ${{ github.ref != 'refs/heads/main' }}
+    #concurrency:
+      #group: group1
+      #cancel-in-progress: false
     steps:
       - run: echo "build"
       - id: someStepId2
@@ -33,9 +34,9 @@ jobs:
 
   job2:
     runs-on: ubuntu-latest
-    concurrency:
-      group: group1
-      cancel-in-progress: false
+    #concurrency:
+      #group: group1
+      #cancel-in-progress: false
     env:
       JOB_VAR: "Job Variable"
     steps:
@@ -55,9 +56,10 @@ jobs:
 
   job3:
     runs-on: ubuntu-latest
-    concurrency:
-      group: group1
-      cancel-in-progress: false
+    if: ${{ github.ref != 'refs/heads/main' }}
+    #concurrency:
+      #group: group1
+      #cancel-in-progress: false
     steps:
       - name: print default env vars
         run: |
