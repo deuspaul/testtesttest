@@ -1,0 +1,22 @@
+name: matrixTest
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  matrixTest:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        variable1: [value1, value2, value3]
+        #include:
+          #- variable1: value4
+          #- variable1: value5
+            #anothervariable: anothervalue
+        #exclude:
+          #- variable1: value1
+
+    steps:
+      - name: echo matrix values
+        run: echo ${{ matrix.variable }}
