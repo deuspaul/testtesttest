@@ -15,8 +15,8 @@ jobs:
           - variable1: value3
           - variable1: value4
             anothervariable: av3
-        #exclude:
-          #- variable1: value1
+        exclude:
+          - variable1: value1
 
     steps:
       - name: echo matrix values
