@@ -9,11 +9,12 @@ jobs:
 
     strategy:
       matrix:
-        variable1: [value1, value2, value3]
-        #include:
-          #- variable1: value4
-          #- variable1: value5
-            #anothervariable: anothervalue
+        variable1: [value1, value2]
+        anothervariable: [av1, av2]
+        include:
+          - variable1: value3
+          - variable1: value4
+            anothervariable: av3
         #exclude:
           #- variable1: value1
 
