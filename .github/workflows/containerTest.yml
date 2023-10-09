@@ -9,6 +9,8 @@ jobs:
       - id: dockerContTest
         name: someName
         uses: docker://hello-world
+        with:
+          args: someTestValue
       - uses: actions/hello-world-javascript-action@main
         with:
           who-to-greet: 'someone'
