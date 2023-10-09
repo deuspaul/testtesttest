@@ -17,7 +17,7 @@ jobs:
       - id: dockerContTest
         name: someName
         #uses: docker://hello-world
-        uses: docker://rockadeus/cheers2019
+        uses: docker://rockadeus/docker101tutorial:latest
         #with:
           #args: someTestValue
       - uses: actions/hello-world-javascript-action@main
