@@ -6,7 +6,9 @@ jobs:
 
   job1:
     runs-on: ubuntu-latest
-    concurrency: group1
+    concurrency: 
+      group: group1
+      cancel-in-progress: true
     steps:
       - run: echo "build"
       - id: someStepId2
@@ -31,7 +33,9 @@ jobs:
 
   job2:
     runs-on: ubuntu-latest
-    concurrency: group1
+    concurrency: 
+      group: group1
+      cancel-in-progress: true
     env:
       JOB_VAR: "Job Variable"
     steps:
@@ -51,7 +55,9 @@ jobs:
 
   job3:
     runs-on: ubuntu-latest
-    concurrency: group1
+    concurrency: 
+      group: group1
+      cancel-in-progress: true
     steps:
       - name: print default env vars
         run: |
@@ -65,7 +71,9 @@ jobs:
 
   job4:
       runs-on: ubuntu-latest
-      concurrency: group1
+      concurrency: 
+        group: group1
+        cancel-in-progress: true
       steps:
         - run: echo "this is job 4"
         
