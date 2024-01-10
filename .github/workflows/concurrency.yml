@@ -1,0 +1,71 @@
+on:
+  workflow_dispatch
+env:
+  WF_VAR: "workflow variable"
+jobs:
+
+  job1:
+    runs-on: ubuntu-latest
+    concurrency: group1
+    steps:
+      - run: echo "build"
+      - id: someStepId2
+        run: echo this is a step with an id and run command
+      - run: |
+          pwd
+          ls
+      - run: |
+          echo ${{ github.actor }}
+          echo ${{ strategy.fail-fast }}
+      - run: echo ${{ github.actor }}
+      - run: echo ${{ strategy.fail-fast }}
+      - name: Dump runner context
+        env:
+          RUNNER_CONTEXT: ${{ toJson(runner) }}
+        run: echo "$RUNNER_CONTEXT"
+      - run: echo "${{ toJson(runner) }}"
+      - run: echo "${{ toJson(job) }}"
+      - run: echo "${{ toJson(steps) }}"
+        
+        
+
+  job2:
+    runs-on: ubuntu-latest
+    concurrency: group1
+    env:
+      JOB_VAR: "Job Variable"
+    steps:
+      - name: test variables
+        env:
+          STEP_VAR: "Step Variables"
+        run: |
+          echo ${{ env.STEP_VAR }}
+          echo $JOB_VAR
+      - name: test powershell
+        shell: pwsh
+        run: echo $env:WF_VAR
+      - shell: python
+        run: |
+          x = 4
+          print (x/2)
+
+  job3:
+    runs-on: ubuntu-latest
+    concurrency: group1
+    steps:
+      - name: print default env vars
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_RUN_ID
+          echo $GITHUB_EVENT_NAME
+          echo $GITHUB_REPOSITORY
+          echo $RUNNER_NAME
+          echo $RUNNER_OS
+          echo $RUNNER_ARCH
+
+  job4:
+      runs-on: ubuntu-latest
+      concurrency: group1
+      steps:
+        - run: echo "this is job 4"
+        
